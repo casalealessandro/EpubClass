@@ -16,7 +16,7 @@ class ControllerAjax{
 	
 	function __construct(){
 		
-		$this->server_path = '//192.168.0.3\Concorsi\lavori\Conversioni EPUB\concorsi\Ebook';
+		$this->server_path = '';
 		
 		
 	}
