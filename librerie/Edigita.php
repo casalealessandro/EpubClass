@@ -2,11 +2,13 @@
 
 class Edigita{
 	
+	$username;
+	$password;
 	
 	public function __construct(){
 		
-		
-		
+		$this->usename = '';
+		$this->password = '';
 	}
 	
 	public function create_onix($post){
@@ -17,37 +19,12 @@ class Edigita{
 			
 			$autori_desc = '';
 			
-			/*if(!empty($post)){
-				
-				
-				$this->validator->check_isset($post['isbn']);
-				$this->validator->check_isset($post['autori']);///merita una validazione a aparte
-				$this->validator->check_isset($post['title']);
-				$this->validator->check_isset($post['sottotitolo']);
-				$this->validator->check_isset($post['npagine']);
-				$this->validator->check_isset($post['keyword']);
-				$this->validator->check_isset($post['meta_description']);
-				$this->validator->check_isset($post['prezzo']);
-				$this->validator->check_isset($post['bisac']);///merita una validazione a aparte
-				$this->validator->check_isset($_FILES["ebook"]); 
-				
-							
-			  if(!$this->validator->valiSuccess()){
-				  return false;        
-			  }
-
-			}*/
-			
-			
 			
 					
 					
 			$isbn = $post['isbn'];
 			
 			
-			
-			
-
 			$dom  = new DOMDocument('1.0', 'utf-8'); 
 			
 			$dom->formatOutput = true;
@@ -123,21 +100,7 @@ class Edigita{
 			
 			/**** Inizio collezioni/serie ****/
 			
-			/*	
-			<Collection>
-				<CollectionType>10</CollectionType>
-				<TitleDetail>
-				  <TitleType>01</TitleType>
-				  <TitleElement>
-					<TitleElementLevel>02</TitleElementLevel>
-					<TitleText>
-					  <![CDATA[Collana test ONIX 3]]>
-					</TitleText>
-				  </TitleElement>
-				 
-				</TitleDetail>
-			</Collection>
-			*/
+			
 			
 			$Collection 		= 	$dom->createElement('Collection');
 			$CollectionType 	= 	$dom->createElement('CollectionType', '10');
@@ -541,43 +504,7 @@ class Edigita{
 			$SupplyDate->appendChild($Date);
 			
 			$SupplyDetail->appendChild($SupplyDate);
-				
-			/*
-			
-			<Price>
-				<PriceType>04</PriceType>
-				<PriceQualifier>05</PriceQualifier>
-				<PriceStatus>02</PriceStatus>
-				<PriceAmount>12.99</PriceAmount>
-				<CurrencyCode>EUR</CurrencyCode>
-				<Territory>
-				  <CountriesIncluded>EU</CountriesIncluded>
-				</Territory>
-				<PriceDate>
-				  <PriceDateRole>14</PriceDateRole>
-				  <DateFormat>00</DateFormat>
-				  <Date>20201211</Date>
-				</PriceDate>
-			 </Price>
-			 
-			 
-			  <PriceType>04</PriceType>
-					<!-- Prezzo ivato fissato dall'editore -->
-				<PriceQualifier>05</PriceQualifier>
-				<!-- Prezzo mercato consumer -->
-				<PriceStatus>02</PriceStatus>
-				  <!-- Prezzo fisso -->
-				  <PriceAmount>10,99</PriceAmount>
-          <!-- Valore -->
-          <CurrencyCode>EUR</CurrencyCode>
-          <!-- Valuta -->
-          <Territory>
-            <CountriesIncluded>EU</CountriesIncluded>
-            <!-- Territorio -->
-          </Territory>
-			
-			
-			*/
+	
 			
 			
 			/******INIZIO PREZZO*****/
@@ -626,7 +553,7 @@ class Edigita{
 			$product->appendChild($ProductSupply);
 			
 			/**Per Ora no**/
-			//$prices = getCovertedPrice($price_euro);
+			$prices = getCovertedPrice($price_euro);
 			
 			
 			
@@ -635,7 +562,7 @@ class Edigita{
 			
 			/**ALTRE VALUTE**/
 			
-			/*foreach($prices as $key => $price){
+			foreach($prices as $key => $price){
 				
 				
 				
@@ -689,9 +616,9 @@ class Edigita{
 				$Price->appendChild($PriceDate);
 				
 				/******FINE PREZZO ALTRE VALUTE*****/
-				//$SupplyDetail->appendChild($Price);
+				$SupplyDetail->appendChild($Price);
 			
-			/*}*/
+			}
 			
 			//$product->appendChild($SupplyDetail);
 			
@@ -753,9 +680,9 @@ class Edigita{
 		
 
 		//HTTP edigita user
-		$username = 'edishop2020';
+		$username = $this->user;
 		//HTTP edigita user.
-		$password = 'EE509XC';
+		$password = $this->password;
 		//headers array.
 		$headers = array(
 			'Content-Type: application/json',
@@ -798,10 +725,10 @@ class Edigita{
 		
 
 		//HTTP edigita user
-		$username = 'edishop2020';
+		$username = $this->user;
 		//HTTP edigita user.
-		$password = 'EE509XC';
-		//headers array.
+		$password = $this->password;
+		
 		$headers = array(
 			'Content-Type: application/json',
 			'Authorization: Basic '. base64_encode("$username:$password")
