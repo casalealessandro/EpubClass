@@ -106,8 +106,7 @@ class EdiMageAPI{
 	
 		}
 		catch(Exception $var) {
-			
-			
+						
 			 echo $var->getMessage();
 		}
 		
