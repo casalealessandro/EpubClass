@@ -7,7 +7,7 @@ require_once("models/epub_model.php");
 
 
 
-class ControllerConcorsi{
+class ControllerEbooks{
 	
 	public $server_path;
 	public $mageapi;
@@ -15,7 +15,7 @@ class ControllerConcorsi{
 	
 	function __construct(){
 		
-		$this->server_path = DIRECTORY_SEPARATOR . DIRECTORY_SEPARATOR ."192.168.0.3\Concorsi\lavori\Conversioni EPUB\concorsi\Ebook";
+		$this->server_path = "ebooks";
 		$this->db_epub = new Epub_model();
 		$this->validator = new Validator();
 	}
@@ -85,7 +85,7 @@ class ControllerConcorsi{
 		}
 		
 	
-		$imported_ebook = $this->db_epub->get_ebook_imported();		
+		
 		
 		//cantook.net/api/organisations/1308/publications/9788836222063.xml
 		
@@ -107,7 +107,7 @@ class ControllerConcorsi{
 			$array_list_proj[$x]['anno'] 		 	= $proj[2];
 			$array_list_proj[$x]['collana'] 	 	= $proj[3];
 			$array_list_proj[$x]['nuovo_isbn'] 		= $proj[4];
-			$array_list_proj[$x]['stato'] 			= '';//$this->get_ebook_uploaded($proj[4]);
+			$array_list_proj[$x]['stato'] 			= '';
 			$x++;
 		}
 
@@ -123,7 +123,7 @@ class ControllerConcorsi{
 	
 	
 	public function detail(){
-		
+		//SU STORE MAGENTO
 		$this->mageapi = new EdiMageAPI();
 		$isbn 	 = $_REQUEST['isbn'];
 		$isbnnew = $_REQUEST['isbnew'];
@@ -141,19 +141,19 @@ class ControllerConcorsi{
 			*/
 			
 			
-			$sku 				= $xml_content->formats->format->value;
+			$sku 			= $xml_content->formats->format->value;
 			$titolo		    	= $xml_content->title[0]->main;
-			$price				= '';
+			$price			= '';
 			$sottotitolo 		= $xml_content->title[0]->subtitle;
-			$autore             = '';
+			$autore                 = '';
 			$$autore_desc		= '';
-			$autori 			= $xml_content->contributors->contributor;
-			$npagine 			= $xml_content->nbr_pages;
-			$keyword			= $xml_content->tags;
+			$autori 		= $xml_content->contributors->contributor;
+			$npagine 		= $xml_content->nbr_pages;
+			$keyword		= $xml_content->tags;
 			$meta_description 	= $xml_content->summary;
 			$description		= $xml_content->presentation;
-			$collana			= $xml_content->collections->collection->title;
-			$classificazione    = $xml_content->subjects->subject;
+			$collana		= $xml_content->collections->collection->title;
+			$classificazione        = $xml_content->subjects->subject;
 			
 			$bisacs = '';
 			/***DA INVIAR ALLA VISTA PER LA SELECT PICKER****/
@@ -179,15 +179,15 @@ class ControllerConcorsi{
 			$sku 				= 	$ebook['items'][0]['sku'];
 			$titolo 			= 	str_replace('[EBOOK]','',$ebook['items'][0]['name']);
 			$price				= 	$ebook['items'][0]['price'];
-			$attributes_code	= 	$ebook['items'][0]['custom_attributes'];
-			$sottotitolo		= 	$this->mageapi->getData('sottotitolo',$attributes_code);
+			$attributes_code		= 	$ebook['items'][0]['custom_attributes'];
+			$sottotitolo			= 	$this->mageapi->getData('sottotitolo',$attributes_code);
 			$autori				= 	array();
-			$autore 	      	= 	$this->mageapi->getData('autore',$attributes_code);
-			$autore_desc 	    = 	strip_tags($this->mageapi->getData('autori',$attributes_code));
-			$npagine 	      	= 	$this->mageapi->getData('numero_pagine',$attributes_code);
-			$keyword 	      	= 	$this->mageapi->getData('meta_keyword',$attributes_code);
-			$meta_description	= 	$this->mageapi->getData('meta_description',$attributes_code);
-			$description   		= 	strip_tags($this->mageapi->getData('description',$attributes_code));
+			$autore 	      		= 	$this->mageapi->getData('autore',$attributes_code);
+			$autore_desc 	    		= 	strip_tags($this->mageapi->getData('autori',$attributes_code));
+			$npagine 	      		= 	$this->mageapi->getData('numero_pagine',$attributes_code);
+			$keyword 	      		= 	$this->mageapi->getData('meta_keyword',$attributes_code);
+			$meta_description		= 	$this->mageapi->getData('meta_description',$attributes_code);
+			$description   			= 	strip_tags($this->mageapi->getData('description',$attributes_code));
 			$bisacs				= 	'';
 			$collana			= 	'';
 		}
@@ -199,7 +199,7 @@ class ControllerConcorsi{
 		
 		
 		$server_path = $this->server_path;
-		$bisac		 =   $this->get_bisac();
+		$bisac	     =   $this->get_bisac();
 		
 		
 		
