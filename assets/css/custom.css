@@ -1,0 +1,376 @@
+img{
+
+	max-width:100%;
+	
+}
+
+
+.header{
+
+	
+	margin-bottom: 15px 0;
+  background: #fff;
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  -ms-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  -o-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  
+  width:100%
+}
+
+.menu_horizzontal{
+	margin:0;
+
+}
+.menu_horizzontal ul{
+
+	margin: 0 15px;
+    padding: 0;
+	
+}
+.menu_horizzontal li{
+
+	list-style:none;
+	padding: 5px 10px;
+	display:inline-block;
+	vertical-align: middle;
+	border-left:1px solid #e1e1e1;
+}
+
+
+.menu_horizzontal .list .sub-menu{
+	display:none;
+	
+}
+
+.menu_horizzontal .list:hover .sub-menu{
+	
+	display:block;
+	position:absolute;
+	z-index:1;
+	width:250px;
+	padding: 0;
+	margin: 0 0 0 -1px;
+	border:1px solid black;
+	background: white;
+	
+}
+.sub-menu li{
+	
+	
+	list-style:none;
+	padding: 5px 10px;
+	display:block;
+	vertical-align: middle;
+	border-bottom:1px solid #e1e1e1;
+	
+}
+
+.sub-menu li:hover{
+	
+	
+		
+}	
+
+.folder-list{
+
+	margin: 5px;
+	padding: 0;
+	list-style: none;
+	width:100%;
+	
+}
+
+.folder-list li{
+
+	padding:10px 5px;
+	display:inline-block;
+	text-align:center;
+	cursor:pointer;
+	width:12.4%
+}
+
+
+
+.folder-list li span{
+
+	display:block;
+   
+    position: relative;
+    text-align: center;
+	
+
+}
+
+.folder-list span.file_image{
+
+	height:226px;
+	
+	
+}
+.right{
+	
+	
+	
+}
+
+
+
+.folder-list li span.file_name{
+	height: 75px;
+    overflow: hidden;
+    word-break: break-all;
+}
+.ebook-info-container{
+	
+	margin: 40px auto;
+		
+}
+.epub_info{
+
+	
+}
+
+.epub_info label{
+	padding: 12px 12px 12px 0;
+  display: inline-block;
+	
+}
+.epub_info input{
+
+	width: -webkit-fill-available;
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	padding-left: 10px;
+	border-bottom: 1px solid;
+}
+.epub_info_inpunt{
+	
+	width:85%;
+}
+
+.overload{
+	width:100%;
+	height:100%;
+	background:#fff;
+	display:none;
+	position: absolute;
+    z-index: 1000;
+}
+.loader {
+	
+	border: 16px dotten #f3f3f3; /* Light grey */
+	border-top: 16px solid #3498db; /* Blue */
+	border-radius: 50%;
+	width: 120px;
+	height: 120px;
+	animation: spin 2s linear infinite;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+  
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.hide {
+	display:none;
+
+}
+
+.upload-area {
+	width:70%;
+	margin: 30px auto;
+    font-size: 1.25rem;
+    background-color: #c8dadf;
+    position: relative;
+    padding: 100px 20px;
+	outline: 2px dashed #92b0b3;
+    outline-offset: -10px;
+    -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
+    transition: outline-offset .15s ease-in-out, background-color .15s linear;
+	
+}
+.box_icon {
+    width: 100%;
+    height: 80px;
+    fill: #92b0b3;
+    display: block;
+    margin-bottom: 40px;
+}
+.box_input label{
+	text-align:center;
+	display:block;
+	width:100%;
+}
+
+.upload-area:hover{
+    cursor: pointer;
+}
+
+.upload-area h1{
+    text-align: center;
+    font-weight: normal;
+    font-family: sans-serif;
+    line-height: 50px;
+    color: darkslategray;
+}
+
+#file{
+    display: none;
+}
+
+
+#progress_bar_content{
+background-color: #ccc;
+width:100%;
+height: 35px;
+
+}
+
+#progress_bar_epub{
+
+	height: 35px;
+    width:0%;
+    line-height: 35px;
+}
+
+#report_container{
+/*	position: fixed;
+	padding: 10px;
+	width: 100%;
+	height: 100%;
+	overflow-y:scroll;
+	border-radius: 10px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	background: #000;
+	display: none;
+	opacity:0.38;
+	
+	-webkit-transition: opacity .5s, visibility 0s linear .5s;
+	transition: opacity .5s, visibility 0s linear .5s;
+	z-index: 1;
+	*/
+	display:none;
+}
+#report{
+	background: #fff;
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    margin: 0 auto;
+    position: relative;
+}
+#report p{
+	border-bottom: 1px solid #ccc;
+    padding: 5px;
+    display: list-item;
+
+}
+
+.{
+	
+}
+.folder-list-no-prev{
+
+	margin: 5px;
+	padding: 0;
+	list-style: none;
+	width:100%;
+	
+}
+
+.folder-list-no-prev li{
+
+	padding:10px 5px;
+	display:block;
+	text-align: left;
+	cursor:pointer;
+	border-bottom:1px solid #ccc;
+	
+}
+
+
+
+.folder-list-no-prev li span{
+
+	display:inline-block;
+	position: relative;
+    text-align: left;
+	margin-right: 15px;
+
+}
+
+.folder-list-no-prev .file_image img{
+
+	height:36px;
+	
+	
+}
+
+.folder-list li span.file_name{
+	height: 75px;
+    overflow: hidden;
+    word-break: break-all;
+}
+
+
+.form-control.error{
+	
+	border: 1px solid #c70000;
+	color:#c70000;
+	
+}
+
+.label.error{
+
+	display:block;
+		
+}	
+
+
+.highlight :hover { 
+  outline:4px solid #f00;
+}
+
+.highlight {  
+  outline:4px solid #f00; 
+}
+
+#contextmenu {
+    
+    background: #c40;
+    color: #fff;
+    width: 180px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    position: absolute;
+    font-family: Arial, sans-serif;
+}
+
+#contextmenu li{
+	
+	
+}	
+
+#contextmenu a {
+    
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: block;
+}
+#contextmenu a:hover {text-decoration: underline;}
+
+.testo_dx{
+	
+	text-align:right!important;
+}
