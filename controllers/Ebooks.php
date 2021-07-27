@@ -3,7 +3,7 @@
 require_once("class/Epub.php");
 require_once("class/Dir.php");
 require_once("librerie/EdiMageAPI.php");
-require_once("models/epub_model.php");
+
 
 
 
