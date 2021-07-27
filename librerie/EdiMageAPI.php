@@ -1,9 +1,4 @@
 <?php
-	ini_set('display_errors', 1);
-	ini_set('display_startup_errors', 1);
-	error_reporting(E_ALL);
-	ini_set("memory_limit", 0);
-
 	
 class EdiMageAPI{
 	
@@ -26,7 +21,7 @@ class EdiMageAPI{
 		$this->apiuser       = $username;
 		$this->password      = $password;
 		$this->getToken();
-		$this->baseUrl 	=  $this->base_url();
+		$this->baseUrl 	     =  $this->base_url();
 		
 		$this->client_id   = '';
 		$this->secret_key  = '';
