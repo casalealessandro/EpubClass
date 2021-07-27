@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jhove xmlns="http://hul.harvard.edu/ois/xml/ns/jhove"
+       date="2016-11-29"
+       name="epubcheck"
+       release="4.0.2">
+   <date>2021-07-26T11:52:12+02:00</date>
+   <repInfo uri="9788836224074.epub">
+      <created>2021-07-26T11:51:48Z</created>
+      <lastModified>2021-07-26T11:51:47Z</lastModified>
+      <format>application/epub+zip</format>
+      <version>3.0.1</version>
+      <status>Well-formed</status>
+      <messages>
+         <message severity="error" subMessage="OPF-003">OPF-003, WARN, [L'elemento 'META-INF' esiste nel contenitore EPUB ma non è dichiarato nel 'manifest' OPF.], 9788836224074.epub</message>
+         <message severity="error" subMessage="OPF-003">OPF-003, WARN, [L'elemento 'OEBPS' esiste nel contenitore EPUB ma non è dichiarato nel 'manifest' OPF.], 9788836224074.epub</message>
+         <message severity="error" subMessage="OPF-003">OPF-003, WARN, [L'elemento 'OEBPS/Images' esiste nel contenitore EPUB ma non è dichiarato nel 'manifest' OPF.], 9788836224074.epub</message>
+         <message severity="error" subMessage="OPF-003">OPF-003, WARN, [L'elemento 'OEBPS/Images/accedi' esiste nel contenitore EPUB ma non è dichiarato nel 'manifest' OPF.], 9788836224074.epub</message>
+         <message severity="error" subMessage="OPF-003">OPF-003, WARN, [L'elemento 'OEBPS/Images/copy' esiste nel contenitore EPUB ma non è dichiarato nel 'manifest' OPF.], 9788836224074.epub</message>
+         <message severity="error" subMessage="OPF-003">OPF-003, WARN, [L'elemento 'OEBPS/Images/front' esiste nel contenitore EPUB ma non è dichiarato nel 'manifest' OPF.], 9788836224074.epub</message>
+         <message severity="error" subMessage="OPF-003">OPF-003, WARN, [L'elemento 'OEBPS/Images/p01c02' esiste nel contenitore EPUB ma non è dichiarato nel 'manifest' OPF.], 9788836224074.epub</message>
+         <message severity="error" subMessage="OPF-003">OPF-003, WARN, [L'elemento 'OEBPS/Images/p01c03' esiste nel contenitore EPUB ma non è dichiarato nel 'manifest' OPF.], 9788836224074.epub</message>
+         <message severity="error" subMessage="OPF-003">OPF-003, WARN, [L'elemento 'OEBPS/Images/p03c01' esiste nel contenitore EPUB ma non è dichiarato nel 'manifest' OPF.], 9788836224074.epub</message>
+         <message severity="error" subMessage="OPF-003">OPF-003, WARN, [L'elemento 'OEBPS/Images/p03f01' esiste nel contenitore EPUB ma non è dichiarato nel 'manifest' OPF.], 9788836224074.epub</message>
+         <message severity="error" subMessage="OPF-003">OPF-003, WARN, [L'elemento 'OEBPS/Images/title' esiste nel contenitore EPUB ma non è dichiarato nel 'manifest' OPF.], 9788836224074.epub</message>
+         <message severity="error" subMessage="OPF-003">OPF-003, WARN, [L'elemento 'OEBPS/Misc' esiste nel contenitore EPUB ma non è dichiarato nel 'manifest' OPF.], 9788836224074.epub</message>
+         <message severity="error" subMessage="OPF-003">OPF-003, WARN, [L'elemento 'OEBPS/Misc/MathJax' esiste nel contenitore EPUB ma non è dichiarato nel 'manifest' OPF.], 9788836224074.epub</message>
+         <message severity="error" subMessage="OPF-003">OPF-003, WARN, [L'elemento 'OEBPS/Misc/MathJax/config' esiste nel contenitore EPUB ma non è dichiarato nel 'manifest' OPF.], 9788836224074.epub</message>
+         <message severity="error" subMessage="OPF-003">OPF-003, WARN, [L'elemento 'OEBPS/Misc/MathJax/fonts' esiste nel contenitore EPUB ma non è dichiarato nel 'manifest' OPF.], 9788836224074.epub</message>
+         <message severity="error" subMessage="OPF-003">OPF-003, WARN, [L'elemento 'OEBPS/Misc/MathJax/images' esiste nel contenitore EPUB ma non è dichiarato nel 'manifest' OPF.], 9788836224074.epub</message>
+         <message severity="error" subMessage="OPF-003">OPF-003, WARN, [L'elemento 'OEBPS/Misc/MathJax/jax' esiste nel contenitore EPUB ma non è dichiarato nel 'manifest' OPF.], 9788836224074.epub</message>
+         <message severity="error" subMessage="OPF-003">OPF-003, WARN, [L'elemento 'OEBPS/Styles' esiste nel contenitore EPUB ma non è dichiarato nel 'manifest' OPF.], 9788836224074.epub</message>
+         <message severity="error" subMessage="OPF-003">OPF-003, WARN, [L'elemento 'OEBPS/Styles/img' esiste nel contenitore EPUB ma non è dichiarato nel 'manifest' OPF.], 9788836224074.epub</message>
+         <message severity="error" subMessage="OPF-003">OPF-003, WARN, [L'elemento 'OEBPS/Text' esiste nel contenitore EPUB ma non è dichiarato nel 'manifest' OPF.], 9788836224074.epub</message>
+         <message severity="error" subMessage="OPF-003">OPF-003, WARN, [L'elemento 'OEBPS/Text/debug.log' esiste nel contenitore EPUB ma non è dichiarato nel 'manifest' OPF.], 9788836224074.epub</message>
+         <message severity="error" subMessage="OPF-003">OPF-003, WARN, [L'elemento 'OEBPS/epublishare' esiste nel contenitore EPUB ma non è dichiarato nel 'manifest' OPF.], 9788836224074.epub</message>
+         <message severity="error" subMessage="OPF-003">OPF-003, WARN, [L'elemento 'OEBPS/epublishare/viewer' esiste nel contenitore EPUB ma non è dichiarato nel 'manifest' OPF.], 9788836224074.epub</message>
+         <message severity="error" subMessage="OPF-003">OPF-003, WARN, [L'elemento 'OEBPS/toc.ncx' esiste nel contenitore EPUB ma non è dichiarato nel 'manifest' OPF.], 9788836224074.epub</message>
+      </messages>
+      <mimeType>application/epub+zip</mimeType>
+      <properties>
+         <property>
+            <name>CharacterCount</name>
+            <values arity="Scalar" type="Long">
+               <value>621876</value>
+            </values>
+         </property>
+         <property>
+            <name>Language</name>
+            <values arity="Scalar" type="String">
+               <value>it</value>
+            </values>
+         </property>
+         <property>
+            <name>Info</name>
+            <values arity="List" type="Property">
+               <property>
+                  <name>Identifier</name>
+                  <values arity="Scalar" type="String">
+                     <value>urn:isbn:9788893621427</value>
+                  </values>
+               </property>
+               <property>
+                  <name>CreationDate</name>
+                  <values arity="Scalar" type="Date">
+                     <value>2021-07-26T11:51:48Z</value>
+                  </values>
+               </property>
+               <property>
+                  <name>ModDate</name>
+                  <values arity="Scalar" type="Date">
+                     <value>2021-07-26T11:51:47Z</value>
+                  </values>
+               </property>
+               <property>
+                  <name>Title</name>
+                  <values arity="Scalar" type="String">
+                     <value>Concorso a cattedra 2018 La Prova orale per la Scuola Secondaria</value>
+                  </values>
+               </property>
+               <property>
+                  <name>Creator</name>
+                  <values arity="Scalar" type="String">
+                     <value>AA VV</value>
+                  </values>
+               </property>
+               <property>
+                  <name>Publisher</name>
+                  <values arity="Scalar" type="String">
+                     <value>EdiSES Edizioni srl</value>
+                  </values>
+               </property>
+               <property>
+                  <name>Rights</name>
+                  <values arity="Scalar" type="String">
+                     <value>Copyright ©  2021 EdiSES Edizioni srl</value>
+                  </values>
+               </property>
+            </values>
+         </property>
+         <property>
+            <name>References</name>
+            <values arity="List" type="Property">
+               <property>
+                  <name>Reference</name>
+                  <values arity="Scalar" type="String">
+                     <value>http://www.pubblica.istruzione.it</value>
+                  </values>
+               </property>
+               <property>
+                  <name>Reference</name>
+                  <values arity="Scalar" type="String">
+                     <value>http://www.edises.it</value>
+                  </values>
+               </property>
+               <property>
+                  <name>Reference</name>
+                  <values arity="Scalar" type="String">
+                     <value>http://edises.it</value>
+                  </values>
+               </property>
+               <property>
+                  <name>Reference</name>
+                  <values arity="Scalar" type="String">
+                     <value>http://Facebook.com</value>
+                  </values>
+               </property>
+               <property>
+                  <name>Reference</name>
+                  <values arity="Scalar" type="String">
+                     <value>http://www.concorsoacattedra.it</value>
+                  </values>
+               </property>
+            </values>
+         </property>
+         <property>
+            <name>MediaTypes</name>
+            <values arity="Array" type="String">
+               <value>image/png</value>
+               <value>application/xhtml+xml</value>
+               <value>text/javascript</value>
+               <value>text/json</value>
+               <value>image/jpeg</value>
+               <value>text/css</value>
+            </values>
+         </property>
+         <property>
+            <name>hasScripts</name>
+            <values arity="Scalar" type="Boolean">
+               <value>true</value>
+            </values>
+         </property>
+      </properties>
+   </repInfo>
+</jhove>
