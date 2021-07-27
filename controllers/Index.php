@@ -61,11 +61,7 @@ class ControllerIndex{
 		
 	}
 	
-	public function file(){
-		
-		
-		
-	}
+	
 }
 
 ?>
