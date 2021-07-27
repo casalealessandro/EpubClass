@@ -18,9 +18,9 @@ class ControllerEpub{
 		$this->epub_path = _EPUB_PATH;
 		
 		
-		$ftp_server = 'ep2.qserver.it';
-		$ftp_user   = 'edisesprj';
-		$ftp_pass   = 'MjBlZGlzZXNwcmoxNQ1_';
+		$ftp_server = '';
+		$ftp_user   = '';
+		$ftp_pass   = '';
 		$this->ftp_class = new Ftp($ftp_server,$ftp_user,$ftp_pass);
 		
 		
@@ -83,13 +83,7 @@ class ControllerEpub{
 		$info_epub = $epub->epub_info();
 		$info_epub['isbn'];
 		
-		$catella_personalizzazioni = $this->personalizzazioni_libro($info_epub['isbn']);
 		
-		
-		
-		
-		
-		$personalizzazione = $this->pers_attiva($epub_folder_path);
 		include_once(_PATH_.'/views/header.php');
 		include_once(_PATH_.'/views/ebook.php');
 		
@@ -97,35 +91,9 @@ class ControllerEpub{
 		
 	}
 	
-	private function personalizzazioni_libro($isbn){
-		$conn = $this->ftp_class->connetti_ftp();
-		if($conn){
-			
-			$files = $this->ftp_class->lista_file($conn,$isbn);
-			return $files;
-			
-				
-		}
-		
-		
-	}
 	
-	private function pers_attiva($epub){
-		
-		
-		
-		$dir_class  = new Dir();
-		$epub.'epublishare/';
-		$publishare_folder = $epub.'OEBPS/epublishare/layers/';
-		
-		if($dir_class->check_is_folder($publishare_folder)){
-			
-			return true;
-		}	
-		
-		return false;
-		
-	}
+	
+	
 	
 	private function js_function(){
 		
