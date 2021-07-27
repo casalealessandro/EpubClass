@@ -20,9 +20,6 @@ class ControllerEpubedit{
 		$this->epub_path = _EPUB_PATH;
 		$this->dir_class = new Dir();
 		
-		$ftp_server = 'ep2.qserver.it';
-		$ftp_user   = 'edisesprj';
-		$ftp_pass   = 'MjBlZGlzZXNwcmoxNQ1_';
 		
 		
 	}
