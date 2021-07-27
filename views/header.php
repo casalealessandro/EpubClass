@@ -73,29 +73,24 @@
 									<li class="icon"><a href="<?php echo url(); ?>index.php/index"><i class="material-icons">home</i></a></li>
 									<li class="icon list">Concorsi
 										<ul class="sub-menu">	
-											<li><a href="<?php echo url(); ?>index.php/concorsi">e-books sul server edises</a></li>
-											<li><a href="<?php echo url(); ?>index.php/concorsi/lista">Importa da lista<a></li>
+											<li><a href="<?php echo url(); ?>index.php/ebooks/lista">Importa da lista<a></li>
 											
 										
 										</ul>
 									
 									</li>
-									<li class="icon"><a href="<?php echo url(); ?>index.php/index">Universitario</a></li>
+									<li class="icon"><a href="<?php echo url(); ?>index.php/index">Libreria Ebook</a></li>
 									
 								
 								</ul>
 							
 						</nav>
 						
-						<!--<div class="logo">
-							
-							<img src="https://www.edises.it/skin/frontend/edises/default/images/logo-edises.png" class="logo">
 						
-						</div>-->
 						<div class="col-sm-4 menu_horizzontal right">
 							
 								<ul>
-									<li class="icon"><a href="<?php echo url(); ?>index.php/epubedit?type=new"><i class="material-icons">add</i></a></li>
+									
 									<li class="icon search"><a href="#"><i class="material-icons">search</i></a></li>
 								
 								</ul>	
