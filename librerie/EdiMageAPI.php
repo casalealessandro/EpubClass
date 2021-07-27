@@ -3,17 +3,7 @@
 	ini_set('display_startup_errors', 1);
 	error_reporting(E_ALL);
 	ini_set("memory_limit", 0);
-/*
-$m = new EdiMageAPI();
-$id_utente='325038';
 
-$data['customer']['id'] 		= $id_utente; 
-$data['customer']['firstname'] 	= 'Alessandro Test'; 
-$data['customer']['lastname'] 	= 'Casale'; 
-$data['customer']['email'] 		= 'studente@edises.it'; 
-$data['customer']['websiteId'] 	= '1'; 
-
-$m->updateUser($id_utente,$data);*/
 	
 class EdiMageAPI{
 	
@@ -30,7 +20,7 @@ class EdiMageAPI{
 	public $storeConfig;
 	
 	
-	public function __construct($url = 'https://www.edises.it/index.php/rest/V1/',$username = 'alessandro',$password = 'edises@21' ){
+	public function __construct($url = '',$username = '',$password = '' ){
 		
 		$this->magentoAPIURL = $url;
 		$this->apiuser       = $username;
@@ -38,8 +28,8 @@ class EdiMageAPI{
 		$this->getToken();
 		$this->baseUrl 	=  $this->base_url();
 		
-		$this->client_id   = '6bc43a0894713aa6cd1ec9ac95d91b6c';
-		$this->secret_key  = '263a95a0d5eea0db5c14cdde1f10386a';
+		$this->client_id   = '';
+		$this->secret_key  = '';
 		$this->storeConfig();
 		
 		//$this->startSession();
@@ -47,15 +37,7 @@ class EdiMageAPI{
 	
 	private function getResponse($request,$headerS,$typeRequest = 'array',$customrequest = 'GET',$firstaccess='' ){
 		
-		/*
-		echo '<pre>';
-		
-		print_r($firstaccess);
-		
-		echo '</pre>';
-		*/
-		
-		
+				
 		try{
 			
 			$curl = curl_init();
@@ -153,17 +135,12 @@ class EdiMageAPI{
 	}
 	
 
-	public function startSession(){
-
-		//session_start();
-		
-	}	
-
+	
 
 	public function search_ebook_by_text($arrayField){
 		
 		$header[] = "Authorization: Bearer ".$this->token;
-		//$text = '291D';
+		
 		
 		$name=$arrayField['name']; 
 		$isbn=$arrayField['isbn']; 
@@ -205,7 +182,7 @@ class EdiMageAPI{
 		$customrequest = 'GET';
 		$firstaccess = '';
 
-//'&searchCriteria[filter_groups][0][filters][0][condition_type]=like'
+
 		
 		$product = $this->getResponse($requestString,$header,$typeRequest,$customrequest);
 		
@@ -220,10 +197,6 @@ class EdiMageAPI{
 
 	public function getProductsByID($id_product){
 		
-		
-		
-		
-
 		
 		$header[] = "Authorization: Bearer ".$this->token;
 		
@@ -242,8 +215,6 @@ class EdiMageAPI{
 	}
 	
 	public function getProductsBySKU($sku){
-		
-		
 		
 		//$curl = curl_init();
 		$header[] = "Authorization: Bearer ".$this->token;
@@ -286,9 +257,7 @@ class EdiMageAPI{
 			
 		$this->getToken();
 		
-		
-		
-		
+				
 		//$curl = curl_init();
 		$header[] = "Authorization: Bearer ".$this->token;
 		
@@ -296,9 +265,7 @@ class EdiMageAPI{
 		$typeRequest = 'array';
 		$customrequest = 'GET';
 		$firstaccess = '';
-		//search?searchCriteria[sortOrders][0][field]=identifier&searchCriteria[sortOrders][0][direction]=asc
-		//echo $requestString;
-
+		
 
 		$cms = $this->getResponse($requestString,$header,$typeRequest,$customrequest);
 		
@@ -350,12 +317,11 @@ class EdiMageAPI{
 		$this->getToken();
 		
 		
-		//$curl = curl_init();
+	
 		$header[] = "Authorization: Bearer ".$this->token;
 		
 		$customername = $email;    
 
-		//API URL to get all Magento 2 modules
 		$requestString = 'customers/search?searchCriteria[filter_groups][0][filters][0][field]=email&searchCriteria[filter_groups][0][filters][0][value]=%25'.$customername.'%25&searchCriteria[filter_groups][0][filters][0][condition_type]=like';
 		//echo $requestString;
 		
@@ -367,14 +333,7 @@ class EdiMageAPI{
 		$resp = $this->getResponse($requestString,$header,$typeRequest,$customrequest);
 		
 		
-				
-		
-		
 		return $resp;
-		
-		
-		
-	
 		
 		
 		
@@ -386,16 +345,12 @@ class EdiMageAPI{
 		
 	
 		$this->getToken();
-		
-		
-		//$curl = curl_init();
+				
 		$header[] = "Authorization: Bearer ".$this->token;
+			
 		
-		
-		//API URL to get all Magento 2 modules
 		$requestString = 'customers/'.$id;
-		//echo $requestString;
-		
+			
 		$typeRequest = 'array';
 		$customrequest = 'GET';
 		$firstaccess = '';
@@ -413,17 +368,13 @@ class EdiMageAPI{
 	
 	public function updateUser($id_utente,$data){
 		
-		//$this->getToken();
-		
-		
-		//$curl = curl_init();
+	
 		$header[]  = "Authorization: Bearer ".$this->token;
 		$header[]  = "Content-Type: application/json";
 		
-		//API URL to get all Magento 2 modules
+
 		$requestString = 'customers/'.$id_utente;
-		//echo $requestString;
-		//echo json_encode($data);
+		
 		
 		$typeRequest = 'array';
 		$customrequest = 'PUT';
@@ -446,11 +397,7 @@ class EdiMageAPI{
 		
 	}
 	
-	function get_user_login(){
-		
-		
-			
-	}
+	
 	
 	
 	function get_token_querystring($url) {
