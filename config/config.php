@@ -21,8 +21,21 @@
 
     $scheme = $httpsEnabled ? 'https' : 'http';
     $host = $_SERVER['HTTP_HOST'] ?? 'localhost';
-    $scriptName = $_SERVER['SCRIPT_NAME'] ?? '/index.php';
-    $basePath = str_replace('\\', '/', dirname($scriptName));
+    $scriptName = str_replace('\\', '/', $_SERVER['SCRIPT_NAME'] ?? '/index.php');
+
+    /*
+     * PATH_INFO style routes such as /index.php/epub/file can make
+     * SCRIPT_NAME contain the route suffix on the PHP built-in server.
+     * Keep only the application path before /index.php so asset URLs
+     * continue to point to the web root (or to the installation subfolder).
+     */
+    $indexPosition = strpos($scriptName, '/index.php');
+
+    if ($indexPosition !== false) {
+        $basePath = substr($scriptName, 0, $indexPosition);
+    } else {
+        $basePath = str_replace('\\', '/', dirname($scriptName));
+    }
 
     if ($basePath === '/' || $basePath === '.') {
         $basePath = '';
