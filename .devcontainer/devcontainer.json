@@ -1,0 +1,13 @@
+{
+  "name": "EpubClass Legacy",
+  "image": "mcr.microsoft.com/devcontainers/php:8.4-bookworm",
+  "forwardPorts": [8000],
+  "portsAttributes": {
+    "8000": {
+      "label": "EpubClass",
+      "onAutoForward": "openBrowser"
+    }
+  },
+  "postCreateCommand": "mkdir -p epub && chmod -R u+rwX epub",
+  "postStartCommand": "php -S 0.0.0.0:8000 -t . > /tmp/epubclass-php.log 2>&1 &"
+}
