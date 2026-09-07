@@ -1,0 +1,57 @@
+name: Legacy smoke test
+
+on:
+  push:
+    branches:
+      - fix/restore-legacy-bootstrap
+  pull_request:
+
+jobs:
+  smoke-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Lint PHP files
+        run: |
+          docker run --rm \
+            -v "$PWD:/app" \
+            -w /app \
+            php:8.4-cli \
+            sh -lc 'find . -name "*.php" -print0 | xargs -0 -n1 php -l'
+
+      - name: Start EpubClass
+        run: |
+          docker run -d \
+            --name epubclass-smoke \
+            -p 8080:8000 \
+            -v "$PWD:/app" \
+            -w /app \
+            php:8.4-cli \
+            php -S 0.0.0.0:8000 -t .
+
+      - name: Check homepage
+        run: |
+          for attempt in {1..10}; do
+            if curl -fsS http://127.0.0.1:8080/index.php/index -o /tmp/epubclass-home.html; then
+              break
+            fi
+            sleep 1
+          done
+
+          cat /tmp/epubclass-home.html
+
+          if grep -Eqi 'Fatal error|Parse error|Uncaught Error|Uncaught Exception' /tmp/epubclass-home.html; then
+            echo 'EpubClass returned a PHP fatal error.'
+            exit 1
+          fi
+
+      - name: Show PHP server log on failure
+        if: failure()
+        run: docker logs epubclass-smoke || true
+
+      - name: Stop EpubClass
+        if: always()
+        run: docker rm -f epubclass-smoke || true
